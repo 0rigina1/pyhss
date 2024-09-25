@@ -42,7 +42,8 @@ COPY docker/*.sh ./
 RUN mkdir -p log && \
     pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     cp /pyhss/tools/Diameter_client.py /pyhss/ && \
-    chmod +x *.sh
+    chmod +x *.sh && \
+    pwd
 
-ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
-CMD [ "/usr/bin/python3", "services/hssService.py"]
+# ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
+# CMD [ "/usr/bin/python3", "services/hssService.py"]
