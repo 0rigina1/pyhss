@@ -19,6 +19,8 @@ sed -i 's|Test_Subscriber_IMSI|'$Test_Subscriber_IMSI'|g' config.yaml
 echo "PyHSS Config:"
 cat config.yaml
 
+cd /pyhss/services/
+
 python3 services/hssService.py &
 python3 services/diameterService.py &
 python3 services/databaseService.py &
