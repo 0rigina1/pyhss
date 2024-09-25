@@ -37,7 +37,7 @@ RUN apt-get update && \
 	git clone https://github.com/0rigina1/pyhss.git
 
 WORKDIR pyhss
-COPY config.yaml ./
+COPY docker/config.yaml ./
 COPY docker/*.sh ./
 RUN mkdir -p log && \
     pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
