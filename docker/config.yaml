@@ -58,7 +58,7 @@ logging:
 #Multiple database types are supported, and additional database can be added easily.
 #See ``databases.md`` for information on connecting to your database of choice, with your preferred schema.
 database:
-  HSS_DB_TYPE:
+    db_type: mysql
     server: 172.10.0.30
     username: pyhss
     password: pyhss
