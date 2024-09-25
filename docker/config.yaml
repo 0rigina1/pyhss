@@ -8,24 +8,24 @@ hss:
   bind_port: 3868
 
   #Value to populate as the OriginHost in Diameter responses
-  OriginHost: "HSS_HOSTNAME.EPC_DOMAIN"
+  OriginHost: "hss01.epc.mnc001.mcc001.3gppnetwork.org"
 
   #Value to populate as the OriginRealm in Diameter responses
-  OriginRealm: "EPC_DOMAIN"
+  OriginRealm: "epc.mnc001.mcc001.3gppnetwork.org"
 
   #Value to populate as the Product name in Diameter responses
   ProductName: "pyHSS"
 
   #Your Home Mobile Country Code (Used for PLMN calcluation)
-  MCC: "MCC"
+  MCC: "001"
   #Your Home Mobile Network Code (Used for PLMN calcluation)
-  MNC: "MNC"
+  MNC: "01"
 
   #Enable GMLC / SLh Interface
   SLh_enabled: False
 
   #IMSI of Test Subscriber for Unit Checks (Optional)
-  test_sub_imsi: 'IMSI'
+  test_sub_imsi: '0101012345678'
 
   #Device Watchdog Request Interval (In Seconds - If set to 0 disabled)
   device_watchdog_request_interval: 0
@@ -59,17 +59,17 @@ logging:
 #See ``databases.md`` for information on connecting to your database of choice, with your preferred schema.
 database:
   HSS_DB_TYPE:
-    server: MARIADB_IP
-    username: DB_USER
-    password: DB_PASSWORD
-    database: DB_NAME
+    server: 172.10.0.30
+    username: pyhss
+    password: pyhss
+    database: hss2
     port: 3306
 
 ## Stats Parameters
 redis:
   enabled: False
   clear_stats_on_boot: True
-  host: REDIS_IP
+  host: 172.10.0.20
   port: 6379
 
 snmp:
