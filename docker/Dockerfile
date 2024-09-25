@@ -1,4 +1,4 @@
-FROM ubuntu:focal as builder
+FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LD_LIBRARY_PATH=/open5gs/install/lib/x86_64-linux-gnu
 RUN apt-get update && \
@@ -34,17 +34,14 @@ RUN apt-get update && \
         libmysqlclient-dev \
         libsystemd-dev \
         python3-psycopg2 \
-        vim \
-        tcpdump \
-        redis-server
-RUN git clone https://github.com/nickvsnetworking/pyhss.git
+RUN git clone https://github.com/0rigina1/pyhss.git
 WORKDIR pyhss
 COPY config.yaml ./
-COPY *.sh ./
+COPY docker/*.sh ./
 RUN mkdir -p log && \
-    pip3 install -r requirements.txt && \
+    pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     cp /pyhss/tools/Diameter_client.py /pyhss/ && \
     chmod +x *.sh
 
 ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
-CMD [ "/usr/bin/python3", "hss.py" ] 
+CMD [ "/usr/bin/python3", "services/hssService.py" ] 
