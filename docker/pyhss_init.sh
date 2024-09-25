@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sleep 15
 
 echo "Updating config for PyHSS"
 [ ${#MNC} == 3 ] && EPC_DOMAIN="epc.mnc${MNC}.mcc${MCC}.3gppnetwork.org" || EPC_DOMAIN="epc.mnc0${MNC}.mcc${MCC}.3gppnetwork.org"
