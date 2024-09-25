@@ -45,5 +45,4 @@ RUN mkdir -p log && \
     chmod +x *.sh && \
     pwd
 
-# ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
-# CMD [ "/usr/bin/python3", "services/hssService.py"]
+ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
