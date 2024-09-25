@@ -34,7 +34,7 @@ RUN apt-get update && \
         libmysqlclient-dev \
         libsystemd-dev \
         python3-psycopg2 \
-RUN git clone https://github.com/0rigina1/pyhss.git
+COPY ../ /pyhss/
 WORKDIR pyhss
 COPY config.yaml ./
 COPY docker/*.sh ./
