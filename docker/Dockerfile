@@ -34,7 +34,7 @@ RUN apt-get update && \
         libmysqlclient-dev \
         libsystemd-dev \
         python3-psycopg2 \
-COPY ../ /pyhss/
+COPY . /pyhss/
 WORKDIR pyhss
 COPY config.yaml ./
 COPY docker/*.sh ./
