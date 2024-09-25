@@ -53,3 +53,7 @@ services:
         networks:
             pyhss:
                 ipv4_address: ${HSS_IP}
+
+volumes:
+    mariadb_data:
+    redis_data:
