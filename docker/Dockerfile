@@ -33,8 +33,9 @@ RUN apt-get update && \
         libpq-dev \
         libmysqlclient-dev \
         libsystemd-dev \
-        python3-psycopg2 \
-COPY . /pyhss/
+        python3-psycopg2 && \
+	git clone https://github.com/0rigina1/pyhss.git
+
 WORKDIR pyhss
 COPY config.yaml ./
 COPY docker/*.sh ./
@@ -44,4 +45,4 @@ RUN mkdir -p log && \
     chmod +x *.sh
 
 ENTRYPOINT [ "/pyhss/entrypoint.sh" ]
-CMD [ "/usr/bin/python3", "services/hssService.py" ] 
+CMD [ "/usr/bin/python3", "services/hssService.py"]

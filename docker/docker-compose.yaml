@@ -50,6 +50,9 @@ services:
         ports:
             - "3868:3868/tcp"
             - "3868:3868/sctp"
+        depends_on:
+            - mariadb
+            - redis
         networks:
             pyhss:
                 ipv4_address: ${HSS_IP}
