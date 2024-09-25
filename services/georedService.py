@@ -39,11 +39,11 @@ class GeoredService:
         self.hostname = socket.gethostname()
 
         if not self.config.get('geored', {}).get('enabled'):
-            self.logger.error("[Geored] Fatal Error - geored not enabled under geored.enabled, exiting.")
+            print("[Geored] Fatal Error - geored not enabled under geored.enabled, exiting.")
             quit()
         if self.georedPeers is not None:
             if not (len(self.georedPeers) > 0):
-                self.logger.error("[Geored] Fatal Error - no peers defined under geored.sync_endpoints, exiting.")
+                print("[Geored] Fatal Error - no peers defined under geored.sync_endpoints, exiting.")
                 quit()
 
     async def sendGeored(self, asyncSession, url: str, operation: str, body: str, transactionId: str=uuid.uuid4(), retryCount: int=3) -> bool:
