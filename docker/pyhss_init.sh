@@ -21,11 +21,11 @@ cat config.yaml
 
 cd /pyhss/services/
 
-python3 services/hssService.py &
-python3 services/diameterService.py &
-python3 services/databaseService.py &
-python3 services/metricService.py &
-python3 services/logService.py &
+python3 hssService.py &
+python3 diameterService.py &
+python3 databaseService.py &
+python3 metricService.py &
+python3 logService.py &
 
 wait -n
 
